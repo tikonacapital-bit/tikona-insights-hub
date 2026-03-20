@@ -5,7 +5,7 @@ import heroDashboard from "@/assets/hero-dashboard.png";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "var(--hero-gradient)" }}>
+    <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "linear-gradient(160deg, hsl(0 0% 100%) 0%, hsl(220 40% 96%) 25%, hsl(220 55% 88%) 50%, hsl(220 65% 40%) 80%, hsl(220 65% 30%) 100%)" }}>
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-[0.04]" style={{
         backgroundImage: "linear-gradient(hsl(0 0% 100%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)",
