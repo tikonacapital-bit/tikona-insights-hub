@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import tikonaLogo from "@/assets/tikona-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +20,12 @@ const Navbar = () => {
         <div className="relative flex items-center justify-between h-16 px-8 max-w-[1400px] mx-auto">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 relative z-10">
-            <img src={tikonaLogo} alt="Tikona Capital" className="h-8 w-auto" />
+            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+              <span className="text-primary-foreground font-heading font-bold text-sm">T</span>
+            </div>
+            <span className="font-heading font-bold text-lg text-foreground">
+              Tikona <span className="text-accent">Research</span>
+            </span>
           </a>
 
           {/* Center nav links */}
@@ -38,7 +42,7 @@ const Navbar = () => {
             <Button variant="hero" size="sm">Get Started</Button>
           </div>
 
-          {/* Animated background pill */}
+          {/* Animated background - starts as center pill, expands to full width */}
           <div
             className="absolute inset-y-0 transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
             style={{
@@ -68,7 +72,12 @@ const Navbar = () => {
       <div className="md:hidden">
         <div className="flex items-center justify-between h-14 px-4 bg-card/90 backdrop-blur-xl border-b border-border/50">
           <a href="#" className="flex items-center gap-2">
-            <img src={tikonaLogo} alt="Tikona Capital" className="h-6 w-auto" />
+            <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center">
+              <span className="text-primary-foreground font-heading font-bold text-xs">T</span>
+            </div>
+            <span className="font-heading font-bold text-base text-foreground">
+              Tikona <span className="text-accent">Research</span>
+            </span>
           </a>
           <button className="text-foreground" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={22} /> : <Menu size={22} />}
