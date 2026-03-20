@@ -51,18 +51,18 @@ const Hero = () => {
 
             <div className="flex items-center gap-6 mt-10 justify-center lg:justify-start">
               <div className="text-center">
-                <p className="text-2xl font-heading font-bold text-primary-foreground">500+</p>
-                <p className="text-xs text-primary-foreground/60">Research Reports</p>
+                <p className="text-2xl font-heading font-bold text-foreground">500+</p>
+                <p className="text-xs text-muted-foreground">Research Reports</p>
               </div>
-              <div className="w-px h-10 bg-primary-foreground/20" />
+              <div className="w-px h-10 bg-border" />
               <div className="text-center">
-                <p className="text-2xl font-heading font-bold text-primary-foreground">50+</p>
-                <p className="text-xs text-primary-foreground/60">Companies Covered</p>
+                <p className="text-2xl font-heading font-bold text-foreground">50+</p>
+                <p className="text-xs text-muted-foreground">Companies Covered</p>
               </div>
-              <div className="w-px h-10 bg-primary-foreground/20" />
+              <div className="w-px h-10 bg-border" />
               <div className="text-center">
-                <p className="text-2xl font-heading font-bold text-primary-foreground">AI</p>
-                <p className="text-xs text-primary-foreground/60">Powered Insights</p>
+                <p className="text-2xl font-heading font-bold text-foreground">AI</p>
+                <p className="text-xs text-muted-foreground">Powered Insights</p>
               </div>
             </div>
           </motion.div>
