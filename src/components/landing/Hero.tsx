@@ -24,9 +24,9 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary-foreground/20 bg-primary-foreground/5 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-card/50 mb-6">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse-glow" />
-              <span className="text-sm text-primary-foreground/80 font-medium">By Tikona Capital</span>
+              <span className="text-sm text-muted-foreground font-medium">By Tikona Capital</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">
