@@ -35,7 +35,7 @@ const Hero = () => {
               <span className="text-gradient">Speaks to You</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-primary-foreground/70 max-w-xl mb-8 leading-relaxed mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-xl mb-8 leading-relaxed mx-auto lg:mx-0">
               Go beyond static PDFs. Access in-depth equity research as interactive reports, 
               audio insights, explainer videos — and even chat with your research using AI.
             </p>
