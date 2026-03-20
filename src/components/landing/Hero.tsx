@@ -30,7 +30,7 @@ const Hero = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">
-              <span className="text-primary-foreground">Research That</span>
+              <span className="text-foreground">Research That</span>
               <br />
               <span className="text-gradient">Speaks to You</span>
             </h1>
