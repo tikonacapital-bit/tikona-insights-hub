@@ -30,10 +30,10 @@ const Navbar = () => {
 
           {/* Center nav links */}
           <div className="flex items-center gap-8 relative z-10">
-            <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>
-            <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors">How It Works</a>
-            <a href="#ai" className="text-sm text-muted-foreground hover:text-foreground transition-colors">AI Assistant</a>
-            <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
+            <a href="#features" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">Features</a>
+            <a href="#how-it-works" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">How It Works</a>
+            <a href="#ai" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">AI Assistant</a>
+            <a href="#pricing" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">Pricing</a>
           </div>
 
           {/* Right buttons */}

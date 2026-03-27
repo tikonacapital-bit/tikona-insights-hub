@@ -20,7 +20,7 @@ const CTA = () => {
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
             Ready to Transform How You Research?
           </h2>
-          <p className="text-lg text-primary-foreground/70 mb-8 leading-relaxed">
+          <p className="text-lg text-primary-foreground/85 mb-8 leading-relaxed">
             Join investors who have upgraded from static PDFs to interactive, AI-powered research. 
             Start with a free report and see the difference.
           </p>
@@ -32,7 +32,7 @@ const CTA = () => {
               View Sample Report
             </Button>
           </div>
-          <p className="mt-6 text-sm text-primary-foreground/50">No credit card required · Cancel anytime</p>
+          <p className="mt-6 text-sm text-primary-foreground/70">No credit card required · Cancel anytime</p>
         </motion.div>
       </div>
     </section>
