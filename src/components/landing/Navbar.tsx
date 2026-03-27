@@ -30,10 +30,9 @@ const Navbar = () => {
 
           {/* Center nav links */}
           <div className="flex items-center gap-8 relative z-10">
-            <a href="#features" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">Features</a>
-            <a href="#how-it-works" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">How It Works</a>
-            <a href="#ai" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">AI Assistant</a>
-            <a href="#pricing" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">Pricing</a>
+            {[["features","Features"],["how-it-works","How It Works"],["ai","AI Assistant"],["pricing","Pricing"]].map(([id,label]) => (
+              <button key={id} onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })} className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">{label}</button>
+            ))}
           </div>
 
           {/* Right buttons */}
