@@ -30,16 +30,14 @@ const Navbar = () => {
 
           {/* Center nav links */}
           <div className="flex items-center gap-8 relative z-10">
-            <a href="#features" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">Features</a>
-            <a href="#how-it-works" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">How It Works</a>
-            <a href="#ai" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">AI Assistant</a>
-            <a href="#pricing" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">Pricing</a>
+            {[["features","Features"],["how-it-works","How It Works"],["ai","AI Assistant"],["pricing","Pricing"]].map(([id,label]) => (
+              <button key={id} onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })} className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">{label}</button>
+            ))}
           </div>
 
           {/* Right buttons */}
           <div className="flex items-center gap-3 relative z-10">
-            <Button variant="ghost" size="sm">Sign In</Button>
-            <Button variant="hero" size="sm">Get Started</Button>
+            <Button variant="hero" size="sm" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>See Plans</Button>
           </div>
 
           {/* Animated background - starts as center pill, expands to full width */}
@@ -92,13 +90,11 @@ const Navbar = () => {
               className="bg-card border-b border-border/50 overflow-hidden"
             >
               <div className="flex flex-col gap-4 p-4">
-                <a href="#features" className="text-sm text-muted-foreground">Features</a>
-                <a href="#how-it-works" className="text-sm text-muted-foreground">How It Works</a>
-                <a href="#ai" className="text-sm text-muted-foreground">AI Assistant</a>
-                <a href="#pricing" className="text-sm text-muted-foreground">Pricing</a>
+                {[["features","Features"],["how-it-works","How It Works"],["ai","AI Assistant"],["pricing","Pricing"]].map(([id,label]) => (
+                  <button key={id} onClick={() => { setIsOpen(false); document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sm text-muted-foreground">{label}</button>
+                ))}
                 <div className="flex gap-3 pt-2">
-                  <Button variant="ghost" size="sm" className="flex-1">Sign In</Button>
-                  <Button variant="hero" size="sm" className="flex-1">Get Started</Button>
+                  <Button variant="hero" size="sm" className="flex-1" onClick={() => { setIsOpen(false); document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }); }}>See Plans</Button>
                 </div>
               </div>
             </motion.div>
