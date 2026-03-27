@@ -90,13 +90,11 @@ const Navbar = () => {
               className="bg-card border-b border-border/50 overflow-hidden"
             >
               <div className="flex flex-col gap-4 p-4">
-                <a href="#features" className="text-sm text-muted-foreground">Features</a>
-                <a href="#how-it-works" className="text-sm text-muted-foreground">How It Works</a>
-                <a href="#ai" className="text-sm text-muted-foreground">AI Assistant</a>
-                <a href="#pricing" className="text-sm text-muted-foreground">Pricing</a>
+                {[["features","Features"],["how-it-works","How It Works"],["ai","AI Assistant"],["pricing","Pricing"]].map(([id,label]) => (
+                  <button key={id} onClick={() => { setIsOpen(false); document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sm text-muted-foreground">{label}</button>
+                ))}
                 <div className="flex gap-3 pt-2">
-                  <Button variant="ghost" size="sm" className="flex-1">Sign In</Button>
-                  <Button variant="hero" size="sm" className="flex-1">Get Started</Button>
+                  <Button variant="hero" size="sm" className="flex-1" onClick={() => { setIsOpen(false); document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }); }}>See Plans</Button>
                 </div>
               </div>
             </motion.div>
