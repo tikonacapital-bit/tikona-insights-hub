@@ -53,7 +53,7 @@ const plans = [
       "Portfolio tracking",
       "Priority email support",
     ],
-    badge: "ACTIVE",
+    badge: null,
     popular: false,
   },
   {
