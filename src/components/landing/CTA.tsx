@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const CTA = () => {
   return (
-    <section id="pricing" className="py-24 relative overflow-hidden" style={{ background: "var(--hero-gradient)" }}>
+    <section className="py-24 relative overflow-hidden" style={{ background: "var(--hero-gradient)" }}>
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: "radial-gradient(circle, hsl(0 0% 100%) 1px, transparent 1px)",
         backgroundSize: "30px 30px"
