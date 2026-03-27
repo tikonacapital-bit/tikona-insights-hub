@@ -38,8 +38,7 @@ const Navbar = () => {
 
           {/* Right buttons */}
           <div className="flex items-center gap-3 relative z-10">
-            <Button variant="ghost" size="sm">Sign In</Button>
-            <Button variant="hero" size="sm">Get Started</Button>
+            <Button variant="hero" size="sm" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>See Plans</Button>
           </div>
 
           {/* Animated background - starts as center pill, expands to full width */}
