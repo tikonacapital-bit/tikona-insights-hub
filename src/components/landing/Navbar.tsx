@@ -8,18 +8,47 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const navLinks = [
+    ["features", "Features"],
+    ["how-it-works", "How It Works"],
+    ["ai", "AI Assistant"],
+    ["pricing", "Pricing"],
+  ];
+
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="fixed top-0 left-0 right-0 z-50">
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center">
       {/* Desktop */}
-      <div className="hidden md:block">
-        <div className="relative flex items-center justify-between h-16 px-8 max-w-[1400px] mx-auto">
+      <div className="hidden md:block w-full" style={{ padding: scrolled ? "10px 0" : "0", transition: "padding 0.4s ease" }}>
+        <div
+          className="mx-auto flex items-center justify-between h-16 px-8"
+          style={{
+            maxWidth: scrolled ? 760 : 1100,
+            borderRadius: scrolled ? 40 : 0,
+            background: scrolled
+              ? "rgba(255, 255, 255, 0.25)"
+              : "transparent",
+            backdropFilter: scrolled ? "blur(10px)" : "none",
+            WebkitBackdropFilter: scrolled ? "blur(10px)" : "none",
+            border: scrolled
+              ? "1px solid rgba(0, 0, 0, 0.08)"
+              : "1px solid transparent",
+            boxShadow: scrolled
+              ? "0 8px 32px rgba(0, 0, 0, 0.08)"
+              : "none",
+            transition: "all 0.4s ease",
+          }}
+        >
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 relative z-10">
+          <a href="#" className="flex items-center gap-2 shrink-0">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <span className="text-primary-foreground font-heading font-bold text-sm">T</span>
             </div>
@@ -29,45 +58,33 @@ const Navbar = () => {
           </a>
 
           {/* Center nav links */}
-          <div className="flex items-center gap-8 relative z-10">
-            {[["features","Features"],["how-it-works","How It Works"],["ai","AI Assistant"],["pricing","Pricing"]].map(([id,label]) => (
-              <button key={id} onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })} className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">{label}</button>
+          <div className="flex items-center gap-8">
+            {navLinks.map(([id, label]) => (
+              <button
+                key={id}
+                onClick={() => scrollTo(id)}
+                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors whitespace-nowrap"
+              >
+                {label}
+              </button>
             ))}
           </div>
 
-          {/* Right buttons */}
-          <div className="flex items-center gap-3 relative z-10">
-            <Button variant="hero" size="sm" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>See Plans</Button>
+          {/* Right button */}
+          <div className="flex items-center shrink-0">
+            <Button
+              variant="hero"
+              size="sm"
+              onClick={() => scrollTo("pricing")}
+            >
+              See Plans
+            </Button>
           </div>
-
-          {/* Animated background - starts as center pill, expands to full width */}
-          <div
-            className="absolute inset-y-0 transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-            style={{
-              left: scrolled ? "-9999px" : "50%",
-              right: scrolled ? "-9999px" : "50%",
-              marginLeft: scrolled ? "9999px" : "-240px",
-              marginRight: scrolled ? "9999px" : "-240px",
-              top: scrolled ? 0 : 8,
-              bottom: scrolled ? 0 : 8,
-              borderRadius: scrolled ? 0 : 9999,
-              background: scrolled
-                ? "hsl(var(--card) / 0.95)"
-                : "hsl(var(--card) / 0.6)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-              border: scrolled ? "none" : "1px solid hsl(var(--border) / 0.4)",
-              borderBottom: scrolled ? "1px solid hsl(var(--border) / 0.6)" : undefined,
-              boxShadow: scrolled
-                ? "0 4px 30px hsl(var(--foreground) / 0.08)"
-                : "0 2px 16px hsl(var(--foreground) / 0.04)",
-            }}
-          />
         </div>
       </div>
 
       {/* Mobile */}
-      <div className="md:hidden">
+      <div className="md:hidden w-full">
         <div className="flex items-center justify-between h-14 px-4 bg-card/90 backdrop-blur-xl border-b border-border/50">
           <a href="#" className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center">
@@ -90,11 +107,19 @@ const Navbar = () => {
               className="bg-card border-b border-border/50 overflow-hidden"
             >
               <div className="flex flex-col gap-4 p-4">
-                {[["features","Features"],["how-it-works","How It Works"],["ai","AI Assistant"],["pricing","Pricing"]].map(([id,label]) => (
-                  <button key={id} onClick={() => { setIsOpen(false); document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sm text-muted-foreground">{label}</button>
+                {navLinks.map(([id, label]) => (
+                  <button
+                    key={id}
+                    onClick={() => { setIsOpen(false); scrollTo(id); }}
+                    className="text-sm text-muted-foreground"
+                  >
+                    {label}
+                  </button>
                 ))}
                 <div className="flex gap-3 pt-2">
-                  <Button variant="hero" size="sm" className="flex-1" onClick={() => { setIsOpen(false); document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }); }}>See Plans</Button>
+                  <Button variant="hero" size="sm" className="flex-1" onClick={() => { setIsOpen(false); scrollTo("pricing"); }}>
+                    See Plans
+                  </Button>
                 </div>
               </div>
             </motion.div>
