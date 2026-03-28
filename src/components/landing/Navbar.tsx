@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import tikonaLogo from "@/assets/tikona-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,13 +52,8 @@ const Navbar = () => {
           }}
         >
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 shrink-0">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-bold text-sm">T</span>
-            </div>
-            <span className="font-heading font-bold text-lg text-foreground">
-              Tikona <span className="text-accent">Research</span>
-            </span>
+          <a href="#" className="shrink-0">
+            <img src={tikonaLogo} alt="Tikona Capital" className="h-8 w-auto" />
           </a>
 
           {/* Center nav links */}
@@ -87,17 +83,29 @@ const Navbar = () => {
       </div>
 
       {/* Mobile */}
-      <div className="md:hidden w-full">
-        <div className="flex items-center justify-between h-14 px-4 bg-card/90 backdrop-blur-xl border-b border-border/50">
-          <a href="#" className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-bold text-xs">T</span>
-            </div>
-            <span className="font-heading font-bold text-base text-foreground">
-              Tikona <span className="text-accent">Research</span>
-            </span>
+      <div className="md:hidden w-full" style={{ padding: scrolled ? "8px 12px" : "0", transition: "padding 0.4s ease" }}>
+        <div
+          className="flex items-center justify-between h-14 px-4"
+          style={{
+            borderRadius: scrolled ? 24 : 0,
+            background: scrolled
+              ? "rgba(255, 255, 255, 0.25)"
+              : "hsla(220, 30%, 12%, 0.9)",
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)",
+            border: scrolled
+              ? "1px solid rgba(0, 0, 0, 0.08)"
+              : "1px solid transparent",
+            boxShadow: scrolled
+              ? "0 8px 32px rgba(0, 0, 0, 0.08)"
+              : "none",
+            transition: "all 0.4s ease",
+          }}
+        >
+          <a href="#" className="shrink-0">
+            <img src={tikonaLogo} alt="Tikona Capital" className="h-6 w-auto brightness-0 invert" style={{ filter: scrolled ? "none" : "brightness(0) invert(1)" }} />
           </a>
-          <button className="text-foreground" onClick={() => setIsOpen(!isOpen)}>
+          <button className="text-foreground" style={{ color: scrolled ? undefined : "white" }} onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
@@ -107,7 +115,13 @@ const Navbar = () => {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="bg-card border-b border-border/50 overflow-hidden"
+              className="overflow-hidden mx-2 mt-1 rounded-2xl"
+              style={{
+                background: "rgba(255, 255, 255, 0.95)",
+                backdropFilter: "blur(10px)",
+                border: "1px solid rgba(0, 0, 0, 0.08)",
+                boxShadow: "0 8px 32px rgba(0, 0, 0, 0.12)",
+              }}
             >
               <div className="flex flex-col gap-4 p-4">
                 {navLinks.map(([id, label]) => (
