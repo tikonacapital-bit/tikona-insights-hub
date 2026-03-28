@@ -2,10 +2,12 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
+import PainSection from "@/components/landing/PainSection";
 import Features from "@/components/landing/Features";
 import HowItWorks from "@/components/landing/HowItWorks";
-import AISection from "@/components/landing/AISection";
+import AIPlayground from "@/components/landing/AIPlayground";
 import Pricing from "@/components/landing/Pricing";
+import Portfolios from "@/components/landing/Portfolios";
 import Footer from "@/components/landing/Footer";
 
 const Index = () => {
@@ -29,10 +31,12 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
+      <PainSection />
       <Features />
       <HowItWorks />
-      <AISection />
+      <AIPlayground />
       <Pricing />
+      <Portfolios />
       <Footer />
     </div>
   );

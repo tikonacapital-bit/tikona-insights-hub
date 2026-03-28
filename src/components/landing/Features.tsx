@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { FileText, Headphones, Video, MessageSquare } from "lucide-react";
 
 const features = [
@@ -32,12 +31,7 @@ const Features = () => {
   return (
     <section id="features" className="py-24 bg-background relative">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <span className="text-sm font-semibold text-accent uppercase tracking-wider">Features</span>
           <h2 className="text-3xl md:text-4xl font-heading font-bold mt-3 mb-4 text-foreground">
             Research, Reimagined
@@ -45,16 +39,12 @@ const Features = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Experience equity research like never before — multi-format, interactive, and designed for how modern investors consume information.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {features.map((feature, i) => (
-            <motion.div
+            <div
               key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
               className="glass-card rounded-xl p-8 hover:shadow-xl hover:border-accent/30 transition-all duration-300 group"
             >
               <div className="flex items-start gap-4">
@@ -71,7 +61,7 @@ const Features = () => {
                   <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

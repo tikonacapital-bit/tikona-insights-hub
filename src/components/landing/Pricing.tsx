@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { motion } from "framer-motion";
 import { Check, ArrowRight, Crown, Zap, Rocket, Gem } from "lucide-react";
 
 const plans = [
@@ -81,59 +80,25 @@ const Pricing = () => {
   return (
     <section id="pricing" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-xs tracking-wider uppercase">
             Pricing
           </Badge>
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
             Choose Your Research Edge
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Pick a plan that matches your investment style. All plans include detailed research reports and portfolio tracking.
-          </p>
-        </motion.div>
-
-        {/* Tab Selector */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {plans.map((plan) => (
-            <button
-              key={plan.id}
-              onClick={() => setActiveTab(plan.id)}
-              className={`relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeTab === plan.id
-                  ? "bg-primary text-primary-foreground shadow-lg"
-                  : "bg-card text-muted-foreground hover:text-foreground border border-border hover:border-primary/30"
-              }`}
-            >
-              {plan.name.split(" ").slice(0, 2).join(" ")}
-              {plan.badge && (
-                <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-[10px] font-bold px-1.5 py-0.5 rounded-full">
-                  {plan.badge === "BEST VALUE" ? "★" : "●"}
-                </span>
-              )}
-            </button>
-          ))}
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {plans.map((plan, index) => {
             const Icon = plan.icon;
             const isActive = activeTab === plan.id;
 
             return (
-              <motion.div
+              <div
                 key={plan.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={`relative rounded-2xl p-6 transition-all duration-300 ${
+                className={`relative rounded-2xl p-5 md:p-6 transition-all duration-300 flex flex-col sm:flex-row lg:flex-col gap-6 md:gap-8 h-full ${
                   plan.popular
                     ? "bg-primary text-primary-foreground shadow-2xl scale-[1.02] border-2 border-accent"
                     : isActive
@@ -155,7 +120,8 @@ const Pricing = () => {
                   </div>
                 )}
 
-                <div className="mb-4 mt-2">
+                {/* Left Side Info (Mobile Rectangle Layout) */}
+                <div className="flex flex-col w-full sm:w-[45%] lg:w-full border-b sm:border-b-0 lg:border-b border-border/20 pb-5 sm:pb-0 lg:pb-5">
                   <div
                     className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${
                       plan.popular
@@ -176,72 +142,93 @@ const Pricing = () => {
                     {plan.name}
                   </h3>
                   <p
-                    className={`text-sm leading-relaxed ${
+                    className={`text-sm leading-relaxed mb-4 flex-1 ${
                       plan.popular ? "text-primary-foreground/80" : "text-muted-foreground"
                     }`}
                   >
                     {plan.description}
                   </p>
+
+                  <div className="mt-auto">
+                    <span
+                      className={`text-3xl font-heading font-bold ${
+                        plan.popular ? "text-primary-foreground" : "text-foreground"
+                      }`}
+                    >
+                      {plan.price}
+                    </span>
+                    <span
+                      className={`text-sm ml-1 ${
+                        plan.popular ? "text-primary-foreground/70" : "text-muted-foreground"
+                      }`}
+                    >
+                      {plan.period}
+                    </span>
+                  </div>
                 </div>
 
-                <div className="mb-6">
-                  <span
-                    className={`text-3xl font-heading font-bold ${
-                      plan.popular ? "text-primary-foreground" : "text-foreground"
-                    }`}
-                  >
-                    {plan.price}
-                  </span>
-                  <span
-                    className={`text-sm ml-1 ${
-                      plan.popular ? "text-primary-foreground/70" : "text-muted-foreground"
-                    }`}
-                  >
-                    {plan.period}
-                  </span>
+                {/* Right Side Content (Mobile Rectangle Layout) */}
+                <div className="flex flex-col flex-1 w-full sm:w-[55%] lg:w-full">
+                  <ul className="space-y-3 mb-6 flex-1 pt-1">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2.5">
+                        <Check
+                          size={16}
+                          className={`mt-0.5 shrink-0 ${
+                            plan.popular ? "text-accent" : "text-primary"
+                          }`}
+                        />
+                        <span
+                          className={`text-sm ${
+                            plan.popular ? "text-primary-foreground/90" : "text-foreground/80"
+                          }`}
+                        >
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto">
+                    <Button
+                      className={`w-full font-semibold ${
+                        plan.popular
+                          ? "bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg"
+                          : "bg-primary text-primary-foreground hover:bg-primary/90"
+                      }`}
+                      size="lg"
+                      onClick={() => window.open("https://tikona-mobile.vercel.app/register", "_blank")}
+                    >
+                      Get Started <ArrowRight size={16} className="ml-1" />
+                    </Button>
+
+                    <p
+                      className={`text-center text-xs mt-3 ${
+                        plan.popular ? "text-primary-foreground/60" : "text-muted-foreground"
+                      }`}
+                    >
+                      Redirects to Tikona Registration
+                    </p>
+                  </div>
                 </div>
-
-                <ul className="space-y-3 mb-6">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2.5">
-                      <Check
-                        size={16}
-                        className={`mt-0.5 shrink-0 ${
-                          plan.popular ? "text-accent" : "text-primary"
-                        }`}
-                      />
-                      <span
-                        className={`text-sm ${
-                          plan.popular ? "text-primary-foreground/90" : "text-foreground/80"
-                        }`}
-                      >
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Button
-                  className={`w-full font-semibold ${
-                    plan.popular
-                      ? "bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg"
-                      : "bg-primary text-primary-foreground hover:bg-primary/90"
-                  }`}
-                  size="lg"
-                >
-                  Get Started <ArrowRight size={16} className="ml-1" />
-                </Button>
-
-                <p
-                  className={`text-center text-xs mt-3 ${
-                    plan.popular ? "text-primary-foreground/60" : "text-muted-foreground"
-                  }`}
-                >
-                  Redirects to Secure Tradebox Checkout
-                </p>
-              </motion.div>
+              </div>
             );
           })}
+        </div>
+
+        {/* Escape hatch */}
+        <div className="text-center mt-10">
+          <p className="text-sm text-muted-foreground">
+            Not sure which plan?{" "}
+            <a
+              href="https://wa.me/919967271135"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:underline font-medium"
+            >
+              Talk to us on WhatsApp →
+            </a>
+          </p>
         </div>
       </div>
     </section>

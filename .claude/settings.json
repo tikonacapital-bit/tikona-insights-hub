@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(./node_modules/.bin/tsc --noEmit)",
+      "Bash(npx --package typescript tsc --noEmit)",
+      "Bash(npm run:*)",
+      "Bash(npx vite:*)",
+      "Bash(npm install:*)",
+      "WebFetch(domain:www.opal.so)",
+      "WebFetch(domain:opalapp.com)",
+      "WebFetch(domain:www.screener.in)",
+      "WebFetch(domain:www.moneycontrol.com)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:www.hdfcbank.com)",
+      "WebFetch(domain:www.tickertape.in)",
+      "WebFetch(domain:www.trendlyne.com)",
+      "WebFetch(domain:www.livemint.com)",
+      "WebFetch(domain:economictimes.indiatimes.com)",
+      "WebFetch(domain:www.business-standard.com)",
+      "WebFetch(domain:www.valueresearchonline.com)",
+      "WebSearch",
+      "WebFetch(domain:developers.gateway.smallcase.com)",
+      "WebFetch(domain:tikonacapital.smallcase.com)"
+    ]
+  }
+}

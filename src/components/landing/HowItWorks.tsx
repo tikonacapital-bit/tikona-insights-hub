@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Search, ShoppingCart, BookOpen, Sparkles } from "lucide-react";
 
 const steps = [
-  { icon: Search, title: "Browse Reports", description: "Explore our growing library of in-depth equity research across sectors." },
   { icon: ShoppingCart, title: "Purchase Access", description: "Get instant access to the reports that matter to your investment thesis." },
+  { icon: Search, title: "Browse Reports", description: "Explore our growing library of in-depth equity research across sectors." },
   { icon: BookOpen, title: "Read, Listen, Watch", description: "Consume research your way — detailed reports, audio summaries, or explainer videos." },
   { icon: Sparkles, title: "Chat with AI", description: "Ask questions and get contextual answers from the report itself. Research that responds." },
 ];
@@ -24,7 +24,7 @@ const HowItWorks = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {steps.map((step, i) => (
             <motion.div
               key={step.title}

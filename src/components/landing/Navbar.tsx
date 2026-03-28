@@ -17,8 +17,9 @@ const Navbar = () => {
   const navLinks = [
     ["features", "Features"],
     ["how-it-works", "How It Works"],
-    ["ai", "AI Assistant"],
+    ["ai-playground", "AI Assistant"],
     ["pricing", "Pricing"],
+    ["portfolios", "Portfolios"],
   ];
 
   const scrollTo = (id: string) => {
@@ -28,6 +29,11 @@ const Navbar = () => {
     }
   };
 
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center">
       {/* Desktop */}
@@ -35,7 +41,7 @@ const Navbar = () => {
         <div
           className="mx-auto flex items-center justify-between h-16 px-8"
           style={{
-            maxWidth: scrolled ? 760 : 1100,
+            maxWidth: scrolled ? 880 : 1100,
             borderRadius: scrolled ? 40 : 0,
             background: scrolled
               ? "rgba(255, 255, 255, 0.25)"
@@ -52,8 +58,8 @@ const Navbar = () => {
           }}
         >
           {/* Logo */}
-          <a href="#" className="shrink-0">
-            <img src={tikonaLogo} alt="Tikona Capital" className="h-8 w-auto" />
+          <a href="/" onClick={scrollToTop} className="shrink-0 cursor-pointer">
+            <img src={tikonaLogo} alt="Tikona Capital" className="h-10 w-auto" />
           </a>
 
           {/* Center nav links */}
@@ -74,9 +80,9 @@ const Navbar = () => {
             <Button
               variant="hero"
               size="sm"
-              onClick={() => scrollTo("pricing")}
+              onClick={() => scrollTo("ai-playground")}
             >
-              See Plans
+              Try AI Demo
             </Button>
           </div>
         </div>
@@ -89,10 +95,10 @@ const Navbar = () => {
           style={{
             borderRadius: scrolled ? 24 : 0,
             background: scrolled
-              ? "rgba(255, 255, 255, 0.25)"
-              : "hsla(220, 30%, 12%, 0.9)",
-            backdropFilter: "blur(10px)",
-            WebkitBackdropFilter: "blur(10px)",
+              ? "rgba(255, 255, 255, 0.85)"
+              : "transparent",
+            backdropFilter: scrolled ? "blur(10px)" : "none",
+            WebkitBackdropFilter: scrolled ? "blur(10px)" : "none",
             border: scrolled
               ? "1px solid rgba(0, 0, 0, 0.08)"
               : "1px solid transparent",
@@ -102,10 +108,10 @@ const Navbar = () => {
             transition: "all 0.4s ease",
           }}
         >
-          <a href="#" className="shrink-0">
-            <img src={tikonaLogo} alt="Tikona Capital" className="h-6 w-auto brightness-0 invert" style={{ filter: scrolled ? "none" : "brightness(0) invert(1)" }} />
+          <a href="/" onClick={scrollToTop} className="shrink-0 cursor-pointer">
+            <img src={tikonaLogo} alt="Tikona Capital" className="h-8 w-auto" />
           </a>
-          <button className="text-foreground" style={{ color: scrolled ? undefined : "white" }} onClick={() => setIsOpen(!isOpen)}>
+          <button className="text-foreground" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
@@ -134,8 +140,8 @@ const Navbar = () => {
                   </button>
                 ))}
                 <div className="flex gap-3 pt-2">
-                  <Button variant="hero" size="sm" className="flex-1" onClick={() => { setIsOpen(false); scrollTo("pricing"); }}>
-                    See Plans
+                  <Button variant="hero" size="sm" className="flex-1" onClick={() => { setIsOpen(false); scrollTo("ai-playground"); }}>
+                    Try AI Demo
                   </Button>
                 </div>
               </div>
