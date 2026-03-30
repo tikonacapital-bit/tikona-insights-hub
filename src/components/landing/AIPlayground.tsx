@@ -10,29 +10,29 @@ interface ChatMessage {
 
 const qaData: { question: string; answer: string }[] = [
   {
-    question: "What are the key financials?",
+    question: "What is the investment thesis?",
     answer:
-      "HDFC Bank reported a net profit of ₹60,812 Cr in FY24, with earnings per share of ₹40.02. Book value stands at ₹350 per share. Return on equity is 17%, and the 5-year profit CAGR is 21%. Net interest income for FY24 was ₹1,09,232 Cr.",
+      "HDFC Bank is India's largest private sector bank by market cap, with a dominant franchise across retail and corporate banking. The thesis rests on three pillars: (1) best-in-class asset quality discipline built over decades, (2) a massive distribution network of 8,000+ branches enabling low-cost deposit mobilization, and (3) cross-selling potential across banking, insurance, and asset management. It remains a core portfolio holding for long-term compounding.",
   },
   {
-    question: "How is the asset quality?",
+    question: "What is the competitive moat?",
     answer:
-      "Asset quality remains strong. Gross NPA stands at 1.24% and Net NPA at 0.33% as of FY24. Provision coverage ratio is around 74%, which is among the best in the Indian banking sector. The bank has consistently maintained low slippage ratios.",
+      "HDFC Bank's moat comes from its unmatched retail deposit franchise, which gives it a structural cost-of-funds advantage over peers. Its technology backbone processes millions of transactions daily with near-zero downtime. The brand trust built over 30 years makes it the default salary account and home loan provider for India's urban middle class. These are durable, difficult-to-replicate advantages.",
   },
   {
-    question: "Key risks?",
+    question: "How is the management quality?",
     answer:
-      "Three primary risks to watch: (1) Net interest margin compression due to rising competition in retail lending, (2) Integration challenges post the HDFC Ltd. merger including higher cost-to-income ratio, and (3) Slower deposit growth compared to credit growth putting pressure on the credit-deposit ratio.",
+      "The bank has a strong track record of institutional leadership. Risk management culture is deeply embedded, not personality-driven. The current leadership has maintained the conservative underwriting standards that defined the bank under its founder. Succession planning has been smooth historically, and SEBI/RBI governance compliance is robust. Management guidance has been reliable and consistent over multiple cycles.",
   },
   {
-    question: "How does it compare to peers?",
+    question: "What are the key risks?",
     answer:
-      "HDFC Bank's ROE of 17% compares well with ICICI Bank at 18.2% and Kotak Mahindra Bank at 14.5%. Gross NPA at 1.24% is better than ICICI Bank's 2.16% and SBI's 2.78%. On profitability, HDFC Bank's net profit of ₹60,812 Cr is the highest among private sector banks.",
+      "Three risks to monitor: (1) Rising competition in retail lending from fintechs and smaller banks compressing margins, (2) Post-merger integration of HDFC Ltd.'s book, particularly around aligning the cost structure and deposit base, and (3) Regulatory risk from evolving RBI norms on digital lending, unsecured loans, and capital adequacy. Macro risks like a prolonged slowdown in credit growth could also impact earnings trajectory.",
   },
   {
-    question: "What about the HDFC merger impact?",
+    question: "What are the growth drivers?",
     answer:
-      "Post the July 2023 merger with HDFC Ltd., the bank's loan book has expanded significantly with a large home loan portfolio added. The merger brought in ₹6.3L Cr of assets. Short-term challenges include a higher cost-to-income ratio and lower CASA ratio, but long-term benefits include cross-selling opportunities and a larger customer base of 93 million+.",
+      "Key growth levers include: (1) India's under-penetrated credit market, especially in semi-urban and rural areas where the bank is expanding aggressively, (2) Cross-selling insurance, mutual funds, and credit cards to the combined HDFC entity's massive customer base, (3) Digital-first acquisition funnels reducing customer acquisition costs, and (4) The secular shift of market share from PSU banks to well-governed private banks, a multi-decade tailwind.",
   },
 ];
 

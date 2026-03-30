@@ -17,6 +17,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { toast } from "sonner";
+import tikonaIcon from "@/assets/tikona-icon.png";
 import ComplianceModal from "@/components/compliance/ComplianceModal";
 import LegalDocumentContent from "@/components/compliance/LegalDocumentContent";
 import BookConsultationModal from "@/components/BookConsultationModal";
@@ -61,7 +62,6 @@ const complianceLinks: ComplianceLink[] = [
   { label: "Disclosure", key: "disclosure", slug: "disclosure" },
   { label: "Disclaimer", key: "disclaimer", slug: "disclaimer" },
   { label: "Grievance Policy", key: "grievance-policy", slug: "grievance-policy" },
-  { label: "MF - Disclosure of Commission", key: "mf-disclosure", slug: "mutual-fund-disclosure" },
   { label: "Grievance Contact", key: "designations" },
   { label: "Terms of Use", key: "terms-of-use", slug: "terms-of-use" },
 ];
@@ -138,13 +138,13 @@ const Footer = () => {
             {/* Col 1-2: Company Info */}
             <div className="sm:col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center">
-                  <span className="text-accent-foreground font-heading font-bold text-base">T</span>
+                <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center">
+                  <img src={tikonaIcon} alt="Tikona Capital" className="w-6 h-6 object-contain" />
                 </div>
-                <span className="font-heading font-bold text-lg text-primary-foreground">Tikona Capital Finserv Pvt Ltd</span>
+                <span className="font-heading font-bold text-lg text-primary-foreground">Tikona Capital</span>
               </div>
               <p className="text-sm text-primary-foreground/70 leading-relaxed mb-6 max-w-sm">
-                A boutique wealth management and advisory firm providing comprehensive wealth solutions. Expert-led research, personalized strategies, and technology-enabled services for HNIs, entrepreneurs, and young investors.
+                Tikona Capital is a SEBI Registered Investment Advisor and Research Analyst, specializing in equity portfolio advisory and financial planning. We help HNIs, entrepreneurs, and business leaders grow and protect their wealth through disciplined, research-driven investing.
               </p>
 
               {/* Newsletter */}
@@ -228,7 +228,7 @@ const Footer = () => {
               <ul className="space-y-3 text-sm text-primary-foreground/70">
                 <li className="flex gap-2">
                   <MapPin size={16} className="text-accent shrink-0 mt-0.5" />
-                  <span>Parinee Cresenzo, C-30, G Block, BKC, Bandra (E), Mumbai - 400051</span>
+                  <span>2C 123 Kalpataru Estate, JVLR, Andheri East, Mumbai, 400093</span>
                 </li>
                 <li className="flex gap-2 items-center">
                   <Mail size={16} className="text-accent shrink-0" />

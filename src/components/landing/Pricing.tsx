@@ -12,6 +12,7 @@ const plans = [
     description: "Consistent performers with long-term compounding potential",
     icon: Zap,
     features: [
+      "2 Research Reports per month",
       "Curated mid cap stock picks",
       "Consistent performer recommendations",
       "Detailed research reports",
@@ -29,6 +30,7 @@ const plans = [
     description: "Focused ideas for aggressive growth investors",
     icon: Rocket,
     features: [
+      "2 Research Reports per month",
       "High-alpha smallcap ideas",
       "Aggressive growth picks",
       "In-depth company analysis",
@@ -46,6 +48,7 @@ const plans = [
     description: "Scalable models from the SME platform",
     icon: Gem,
     features: [
+      "2 Research Reports per month",
       "High-growth SME ideas",
       "Early-stage businesses",
       "In-depth company analysis",
@@ -63,6 +66,7 @@ const plans = [
     description: "Complete access to all research plans",
     icon: Crown,
     features: [
+      "6 Research Reports per month",
       "Everything in all plans",
       "Mid cap + Smallcap + SME picks",
       "Personalised research calls",

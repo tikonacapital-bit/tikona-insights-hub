@@ -7,9 +7,20 @@ import tikonaLogo from "@/assets/tikona-logo.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 50);
+      if (y > 300) {
+        setHidden(y > lastY);
+      } else {
+        setHidden(false);
+      }
+      lastY = y;
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -35,7 +46,13 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center">
+    <div
+      className="fixed top-0 left-0 right-0 z-50 flex justify-center"
+      style={{
+        transform: hidden ? "translateY(-100%)" : "translateY(0)",
+        transition: "transform 0.3s ease",
+      }}
+    >
       {/* Desktop */}
       <div className="hidden md:block w-full" style={{ padding: scrolled ? "10px 0" : "0", transition: "padding 0.4s ease" }}>
         <div

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight, Play, FileText, Headphones, Video, Sparkles, Send, TrendingUp, ChevronLeft } from "lucide-react";
+import tikonaIcon from "@/assets/tikona-icon.png";
 
 const Hero = () => {
   const scrollTo = (id: string) => {
@@ -30,6 +31,12 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left"
           >
+            <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-1.5 mb-4">
+              <div className="w-5 h-5 rounded bg-white flex items-center justify-center">
+                <img src={tikonaIcon} alt="Tikona Capital" className="w-3.5 h-3.5 object-contain" />
+              </div>
+              <span className="text-xs font-semibold text-primary tracking-wide">A Product by Tikona Capital</span>
+            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">
               <span className="text-foreground">Research That</span>
               <br />
@@ -144,27 +151,27 @@ const Hero = () => {
                     <div className="flex justify-end">
                       <div className="bg-[#1F4690] rounded-xl rounded-br-sm px-3 py-1.5 max-w-[82%]">
                         <p className="text-[9px] text-white leading-relaxed">
-                          What are the key financials of HDFC Bank?
+                          What is the investment thesis?
                         </p>
                       </div>
                     </div>
 
-                    {/* AI response — all numbers sourced from Screener.in FY24 */}
+                    {/* AI response */}
                     <div className="flex gap-1.5 items-start">
                       <div className="w-5 h-5 rounded-full bg-[#FFA500] flex items-center justify-center shrink-0 mt-0.5">
                         <Sparkles size={10} className="text-white" />
                       </div>
                       <div className="bg-[#FFE5B4]/30 rounded-xl rounded-tl-sm px-3 py-2 flex-1">
                         <p className="text-[9px] text-foreground/90 leading-relaxed mb-1.5">
-                          Key financials for HDFC Bank (FY24):
+                          The thesis rests on three pillars:
                         </p>
                         <div className="space-y-[4px]">
                           {[
-                            ["Net Profit", "\u20B960,812 Cr"],
-                            ["ROE", "17%"],
-                            ["Gross NPA", "1.24%"],
-                            ["Net NPA", "0.33%"],
-                            ["Book Value", "\u20B9350/share"],
+                            ["Moat", "Best-in-class asset quality"],
+                            ["Distribution", "8,000+ branch network"],
+                            ["Growth", "Cross-sell across banking"],
+                            ["Edge", "Low-cost deposit franchise"],
+                            ["Outlook", "Core long-term compounder"],
                           ].map(([label, value]) => (
                             <div key={label} className="flex justify-between text-[8px] py-[2px] border-b border-border/60 last:border-0">
                               <span className="text-muted-foreground">{label}</span>
@@ -173,7 +180,7 @@ const Hero = () => {
                           ))}
                         </div>
                         <p className="text-[8px] text-muted-foreground mt-1.5 leading-relaxed">
-                          5-year profit CAGR of 21% with strong asset quality.
+                          A dominant franchise with durable competitive advantages.
                         </p>
                       </div>
                     </div>
