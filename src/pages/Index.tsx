@@ -6,6 +6,7 @@ import PainSection from "@/components/landing/PainSection";
 import Features from "@/components/landing/Features";
 import HowItWorks from "@/components/landing/HowItWorks";
 import AIPlayground from "@/components/landing/AIPlayground";
+import DemoVideo from "@/components/landing/DemoVideo";
 import Pricing from "@/components/landing/Pricing";
 import Portfolios from "@/components/landing/Portfolios";
 import Footer from "@/components/landing/Footer";
@@ -34,6 +35,7 @@ const Index = () => {
       <PainSection />
       <Features />
       <HowItWorks />
+      <DemoVideo />
       <AIPlayground />
       <Pricing />
       <Portfolios />
