@@ -5,8 +5,8 @@ import Hero from "@/components/landing/Hero";
 import PainSection from "@/components/landing/PainSection";
 import Features from "@/components/landing/Features";
 import HowItWorks from "@/components/landing/HowItWorks";
+import SaarthiFramework from "@/components/landing/SaarthiFramework";
 import AIPlayground from "@/components/landing/AIPlayground";
-import DemoVideo from "@/components/landing/DemoVideo";
 import Pricing from "@/components/landing/Pricing";
 import Portfolios from "@/components/landing/Portfolios";
 import Footer from "@/components/landing/Footer";
@@ -34,8 +34,8 @@ const Index = () => {
       <Hero />
       <PainSection />
       <Features />
+      <SaarthiFramework />
       <HowItWorks />
-      <DemoVideo />
       <AIPlayground />
       <Pricing />
       <Portfolios />
