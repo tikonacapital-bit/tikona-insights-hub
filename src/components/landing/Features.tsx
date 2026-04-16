@@ -108,23 +108,28 @@ const Features = () => {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15 }}
+            initial={{ opacity: 0, y: 120, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, type: "spring", bounce: 0.3 }}
             className="xl:h-full xl:flex xl:items-center xl:justify-center"
           >
-            <div className="mx-auto w-full max-w-[260px] xl:w-[260px] xl:flex xl:justify-center">
-              <div className="glass-card w-full rounded-[28px] p-2 border border-border/60 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.45)]">
-                <div className="relative overflow-hidden rounded-[22px] border border-border/50 bg-card">
+            <div className="mx-auto w-full max-w-[280px] xl:w-[280px] xl:flex xl:justify-center">
+              <div 
+                className="relative w-full rounded-[3rem] p-[6px] shadow-2xl"
+                style={{
+                  background: "linear-gradient(145deg, #1A2C55, #2B4582)",
+                  boxShadow: "0 25px 60px rgba(0, 0, 0, 0.4)",
+                }}
+              >
+                <div className="relative overflow-hidden rounded-[2.65rem] border border-white/5 bg-[#0D1118]">
                   <video
                     ref={videoRef}
-                    className="w-full aspect-[10/19] object-contain bg-black"
+                    className="w-full aspect-[9/19.5] object-cover bg-black"
                     src="/demo_video.mp4"
                     autoPlay
                     muted
                     loop
-                    controls
                     playsInline
                     preload="metadata"
                   >
